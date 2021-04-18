@@ -3,12 +3,13 @@ import ReactDOM from 'react-dom';
 
 import App from './App.jsx';
 
+import 'modern-normalize/modern-normalize.css';
+
 import './index.scss';
-import styles from './App.scss';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App classeName={styles.App} />
+    <App />
   </React.StrictMode>,
   document.getElementById('root'),
 );

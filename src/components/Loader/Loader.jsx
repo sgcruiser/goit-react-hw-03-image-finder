@@ -1,5 +1,21 @@
-// import styles from './Loader.modules.scss';
+import { Component } from 'react';
 
-const Loader = () => {};
+import Loader from 'react-loader-spinner';
 
-export default Loader;
+import styles from './Loader.module.scss';
+
+export default class App extends Component {
+  //other logic
+  render() {
+    return (
+      <Loader
+        type="Oval"
+        color="#00BFFF"
+        height={100}
+        width={100}
+        timeout={3000} //3 secs
+        className={styles.Loader}
+      />
+    );
+  }
+}

@@ -1,11 +1,28 @@
-import styles from './ImageGallery.modules.scss';
+import PropTypes from 'prop-types';
 
-const ImageGallery = () => {
-    return (
-        <ul className={styles.ImageGallery}>
-                <!-- Набор <li> с изображениями -->
-        </ul>
-    )
+import ImageGalleryItem from '../ImageGalleryItem';
+
+import styles from './ImageGallery.module.scss';
+
+const ImageGallery = ({ images, onClickImage }) => {
+  return (
+    <ul className={styles.ImageGallery}>
+      {images.map(image => {
+        return (
+          <ImageGalleryItem
+            key={image.id}
+            image={image}
+            onClickImage={onClickImage}
+          />
+        );
+      })}
+    </ul>
+  );
+};
+
+ImageGallery.propTypes = {
+  id: PropTypes.string,
+  images: PropTypes.arrayOf(PropTypes.object).isRequired,
 };
 
 export default ImageGallery;
