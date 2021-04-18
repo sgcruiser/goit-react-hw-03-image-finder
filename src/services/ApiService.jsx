@@ -2,11 +2,11 @@ import axios from 'axios';
 
 const apiKey = '20348581-4182e159a5fcf959667e3ff42';
 
-const instanse = axios.create();
+// const instanse = axios.create();
 
-instanse.defaults.baseURL = 'https://pixabay.com/api';
+axios.defaults.baseURL = 'https://pixabay.com/api';
 
-instanse.defaults.params = {
+axios.defaults.params = {
   key: apiKey,
   orientation: 'horizontal',
   image_type: 'photo',
@@ -14,7 +14,7 @@ instanse.defaults.params = {
 };
 
 const ApiService = async ({ searchQuery, pageNumber }) => {
-  return await instanse
+  return await axios
     .get('', { params: { q: searchQuery, page: pageNumber } })
     .then(({ data }) => data);
 };
