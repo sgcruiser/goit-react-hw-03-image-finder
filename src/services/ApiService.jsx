@@ -13,7 +13,7 @@ instanse.defaults.params = {
   per_page: 12,
 };
 
-const ApiService = async ({ searchQuery = '', pageNumber = 1 }) => {
+const ApiService = async ({ searchQuery, pageNumber }) => {
   return await instanse
     .get('', { params: { q: searchQuery, page: pageNumber } })
     .then(({ data }) => data);
